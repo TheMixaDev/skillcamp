@@ -30,12 +30,63 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="GasStationLogs">
+      <EntityTypeMapping TypeName="AZSModel.GasStationLog">
+        <MappingFragment StoreEntitySet="GasStationLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="GasStationId" ColumnName="GasStationId" />
+          <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+          <ScalarProperty Name="LitersCount" ColumnName="LitersCount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="TimeInSecods" ColumnName="TimeInSecods" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="LoyalityCards">
       <EntityTypeMapping TypeName="AZSModel.LoyalityCard">
         <MappingFragment StoreEntitySet="LoyalityCards">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pays">
+      <EntityTypeMapping TypeName="AZSModel.Pay">
+        <MappingFragment StoreEntitySet="Pay">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="CardHolderId" ColumnName="CardHolderId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrganisationName" ColumnName="OrganisationName" />
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="AZSModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardHolderId" ColumnName="CardHolderId" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="GasStationId" ColumnName="GasStationId" />
+          <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refunds">
+      <EntityTypeMapping TypeName="AZSModel.Refund">
+        <MappingFragment StoreEntitySet="Refund">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Card" ColumnName="Card" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

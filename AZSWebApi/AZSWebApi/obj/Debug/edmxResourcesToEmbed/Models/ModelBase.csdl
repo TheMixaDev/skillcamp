@@ -28,7 +28,23 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Address" Type="String" MaxLength="300" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GasStationLogs" Relationship="Self.FK_GasStationLog_GasStation" FromRole="GasStation" ToRole="GasStationLog" />
+    <NavigationProperty Name="Purchases" Relationship="Self.FK_Purchase_GasStation" FromRole="GasStation" ToRole="Purchase" />
     <NavigationProperty Name="StationFuels" Relationship="Self.FK_StationFuel_GasStation" FromRole="GasStation" ToRole="StationFuel" />
+  </EntityType>
+  <EntityType Name="GasStationLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="GasStationId" Type="Int32" Nullable="false" />
+    <Property Name="FuelType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LitersCount" Type="Double" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TimeInSecods" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GasStation" Relationship="Self.FK_GasStationLog_GasStation" FromRole="GasStationLog" ToRole="GasStation" />
   </EntityType>
   <EntityType Name="LoyalityCard">
     <Key>
@@ -38,6 +54,45 @@
     <Property Name="CardHolder" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Balance" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cards" Relationship="Self.FK_Card_LoyalityCards" FromRole="LoyalityCards" ToRole="Card" />
+    <NavigationProperty Name="Pays" Relationship="Self.FK_Pay_LoyalityCards" FromRole="LoyalityCards" ToRole="Pay" />
+    <NavigationProperty Name="Purchases" Relationship="Self.FK_Purchase_LoyalityCards" FromRole="LoyalityCards" ToRole="Purchase" />
+  </EntityType>
+  <EntityType Name="Pay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardNumber" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CardHolderId" Type="Int32" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="OrganisationName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="StationId" Type="Int32" Nullable="false" />
+    <Property Name="Token" Type="String" MaxLength="256" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LoyalityCard" Relationship="Self.FK_Pay_LoyalityCards" FromRole="Pay" ToRole="LoyalityCards" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardHolderId" Type="Int32" Nullable="false" />
+    <Property Name="PurchaseDate" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="GasStationId" Type="Int32" Nullable="false" />
+    <Property Name="FuelType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="Int32" Nullable="false" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <Property Name="PaymentType" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GasStation" Relationship="Self.FK_Purchase_GasStation" FromRole="Purchase" ToRole="GasStation" />
+    <NavigationProperty Name="LoyalityCard" Relationship="Self.FK_Purchase_LoyalityCards" FromRole="Purchase" ToRole="LoyalityCards" />
+  </EntityType>
+  <EntityType Name="Refund">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Card" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="StationFuel">
     <Key>
@@ -74,6 +129,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_GasStationLog_GasStation">
+    <End Role="GasStation" Type="Self.GasStation" Multiplicity="1" />
+    <End Role="GasStationLog" Type="Self.GasStationLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GasStation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GasStationLog">
+        <PropertyRef Name="GasStationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_GasStation">
+    <End Role="GasStation" Type="Self.GasStation" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GasStation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="GasStationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_StationFuel_GasStation">
     <End Role="GasStation" Type="Self.GasStation" Multiplicity="1" />
     <End Role="StationFuel" Type="Self.StationFuel" Multiplicity="*" />
@@ -86,11 +165,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Pay_LoyalityCards">
+    <End Role="LoyalityCards" Type="Self.LoyalityCard" Multiplicity="1" />
+    <End Role="Pay" Type="Self.Pay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoyalityCards">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pay">
+        <PropertyRef Name="CardHolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_LoyalityCards">
+    <End Role="LoyalityCards" Type="Self.LoyalityCard" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoyalityCards">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="CardHolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="AZSEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Cards" EntityType="Self.Card" />
     <EntitySet Name="CardTypes" EntityType="Self.CardType" />
     <EntitySet Name="GasStations" EntityType="Self.GasStation" />
+    <EntitySet Name="GasStationLogs" EntityType="Self.GasStationLog" />
     <EntitySet Name="LoyalityCards" EntityType="Self.LoyalityCard" />
+    <EntitySet Name="Pays" EntityType="Self.Pay" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+    <EntitySet Name="Refunds" EntityType="Self.Refund" />
     <EntitySet Name="StationFuels" EntityType="Self.StationFuel" />
     <AssociationSet Name="FK_Card_CardType" Association="Self.FK_Card_CardType">
       <End Role="CardType" EntitySet="CardTypes" />
@@ -100,9 +207,25 @@
       <End Role="LoyalityCards" EntitySet="LoyalityCards" />
       <End Role="Card" EntitySet="Cards" />
     </AssociationSet>
+    <AssociationSet Name="FK_GasStationLog_GasStation" Association="Self.FK_GasStationLog_GasStation">
+      <End Role="GasStation" EntitySet="GasStations" />
+      <End Role="GasStationLog" EntitySet="GasStationLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_GasStation" Association="Self.FK_Purchase_GasStation">
+      <End Role="GasStation" EntitySet="GasStations" />
+      <End Role="Purchase" EntitySet="Purchases" />
+    </AssociationSet>
     <AssociationSet Name="FK_StationFuel_GasStation" Association="Self.FK_StationFuel_GasStation">
       <End Role="GasStation" EntitySet="GasStations" />
       <End Role="StationFuel" EntitySet="StationFuels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pay_LoyalityCards" Association="Self.FK_Pay_LoyalityCards">
+      <End Role="LoyalityCards" EntitySet="LoyalityCards" />
+      <End Role="Pay" EntitySet="Pays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_LoyalityCards" Association="Self.FK_Purchase_LoyalityCards">
+      <End Role="LoyalityCards" EntitySet="LoyalityCards" />
+      <End Role="Purchase" EntitySet="Purchases" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

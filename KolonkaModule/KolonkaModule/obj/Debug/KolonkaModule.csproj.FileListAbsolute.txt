@@ -12,3 +12,5 @@ C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\bin\Debug\Newtonsoft.J
 C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.csproj.CopyComplete
 C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.exe
 C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.pdb
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.view.AlternativePaymentView.resources
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.view.PistolView.resources

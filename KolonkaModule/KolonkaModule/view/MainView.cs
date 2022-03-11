@@ -42,14 +42,14 @@ namespace KolonkaModule.view
                         instance.Invoke(new Action(() =>
                         {
                             MessageBox.Show("Указанная станция не найдена!");
-                            statusLabel.Text = "Введите идентификатор АЗС";
+                            statusLabel.Text = "Введите ID колонки:";
                             inputBox.Enabled = true;
                         }));
                         return;
                     }
                     instance.Invoke(new Action(() =>
                     {
-                        statusLabel.Text = "Введите идентификатор АЗС";
+                        statusLabel.Text = "Введите ID колонки:";
                         inputBox.Enabled = true;
                     }));
                     (new AZSView(data)).ShowDialog();
@@ -58,7 +58,7 @@ namespace KolonkaModule.view
             catch
             {
                 MessageBox.Show("Указанная станция не найдена!");
-                statusLabel.Text = "Введите идентификатор АЗС";
+                statusLabel.Text = "Введите ID колонки:";
                 inputBox.Enabled = true;
             }
         }

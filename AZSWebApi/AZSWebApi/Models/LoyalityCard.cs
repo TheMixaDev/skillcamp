@@ -18,6 +18,8 @@ namespace AZSWebApi.Models
         public LoyalityCard()
         {
             this.Cards = new HashSet<Card>();
+            this.Pays = new HashSet<Pay>();
+            this.Purchases = new HashSet<Purchase>();
         }
     
         public int Id { get; set; }
@@ -26,5 +28,9 @@ namespace AZSWebApi.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Card> Cards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay> Pays { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Purchase> Purchases { get; set; }
     }
 }

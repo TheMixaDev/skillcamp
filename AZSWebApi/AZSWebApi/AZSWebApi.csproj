@@ -162,6 +162,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StationsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -174,6 +176,9 @@
       <DependentUpon>ModelBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GasStation.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GasStationLog.cs">
       <DependentUpon>ModelBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LoyalityCard.cs">
@@ -194,9 +199,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelBase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pay.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Purchase.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Refund.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\StationFuel.cs">
       <DependentUpon>ModelBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SupportModels\PostRequestAddStoryStation.cs" />
+    <Compile Include="Models\SupportModels\PostRequestBonusClient.cs" />
+    <Compile Include="Models\SupportModels\PostRequestPayBank.cs" />
+    <Compile Include="Models\SupportModels\PostRequestRefundBank.cs" />
     <Compile Include="Models\SupportModels\PostRequestSetStation.cs" />
     <Compile Include="Models\SupportModels\StationData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,8 +230,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\ModelBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelBase.Context.cs</LastGenOutput>
       <DependentUpon>ModelBase.edmx</DependentUpon>
+      <LastGenOutput>ModelBase.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ModelBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

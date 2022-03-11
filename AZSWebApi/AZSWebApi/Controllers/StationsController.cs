@@ -45,7 +45,7 @@ namespace AZSWebApi.Controllers
                 stationFuel.AmountOfFuel = fueldata.Left;
             }
             context.SaveChanges();
-            return CreatedAtRoute("DefaultApi", new { id = 0 }, value);
+            return Ok();
         }
 
         /// <summary>
@@ -83,6 +83,40 @@ namespace AZSWebApi.Controllers
             {
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Добавить историю использования колонки
+        /// </summary>
+        /// <param name="value">Тело запроса</param>
+        /// <returns>Код ответа</returns>
+        [Route("addStory")]
+        public IHttpActionResult PostStory(PostRequestAddStoryStation value)
+        {
+            AZSEntities context = new AZSEntities();
+            if (value == null)
+            {
+                ModelState.AddModelError("Model", "Model is null");
+                return BadRequest(ModelState);
+            }
+            GasStation station = context.GasStations.FirstOrDefault(x => x.Id == value.StationId);
+            if (station == null)
+            {
+                ModelState.AddModelError("Model", "Unknown station");
+                return BadRequest(ModelState);
+            }
+            GasStationLog log = new GasStationLog {
+                Date = DateTime.Now.ToString("yyyy-MM-dd") + "T" + DateTime.Now.ToString("hh:mm:ss"),
+                GasStation = station,
+                FuelType = value.Fuel,
+                LitersCount = value.Liters,
+                Price = value.Price,
+                PaymentMethod = value.PaymentMethod,
+                TimeInSecods = value.TimeInSeconds
+            };
+            context.GasStationLogs.Add(log);
+            context.SaveChanges();
+            return Ok();
         }
     }
 }

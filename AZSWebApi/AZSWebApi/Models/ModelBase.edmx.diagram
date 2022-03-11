@@ -4,15 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7c3d3080bd6149d09037ce2755830405" Name="Diagram1">
-        <EntityTypeShape EntityType="AZSModel.Card" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="AZSModel.CardType" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AZSModel.GasStation" Width="1.5" PointX="2.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AZSModel.LoyalityCard" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AZSModel.StationFuel" Width="1.5" PointX="5" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="3e763f8de8c64555b08a0449cd1411b3" Name="Diagram1">
+        <EntityTypeShape EntityType="AZSModel.Card" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.CardType" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.GasStation" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.GasStationLog" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.LoyalityCard" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.Pay" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.Purchase" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.Refund" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AZSModel.StationFuel" Width="1.5" PointX="6" PointY="12.75" IsExpanded="true" />
         <AssociationConnector Association="AZSModel.FK_Card_CardType" ManuallyRouted="false" />
         <AssociationConnector Association="AZSModel.FK_Card_LoyalityCards" ManuallyRouted="false" />
+        <AssociationConnector Association="AZSModel.FK_GasStationLog_GasStation" ManuallyRouted="false" />
+        <AssociationConnector Association="AZSModel.FK_Purchase_GasStation" ManuallyRouted="false" />
         <AssociationConnector Association="AZSModel.FK_StationFuel_GasStation" ManuallyRouted="false" />
+        <AssociationConnector Association="AZSModel.FK_Pay_LoyalityCards" ManuallyRouted="false" />
+        <AssociationConnector Association="AZSModel.FK_Purchase_LoyalityCards" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

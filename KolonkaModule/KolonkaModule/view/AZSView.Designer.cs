@@ -41,12 +41,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.proceedButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.clientBox = new System.Windows.Forms.ComboBox();
+            this.proceedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 9);
+            this.label1.Location = new System.Drawing.Point(55, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
@@ -55,7 +58,7 @@
             // fuelBox
             // 
             this.fuelBox.FormattingEnabled = true;
-            this.fuelBox.Location = new System.Drawing.Point(106, 6);
+            this.fuelBox.Location = new System.Drawing.Point(106, 35);
             this.fuelBox.Name = "fuelBox";
             this.fuelBox.Size = new System.Drawing.Size(257, 21);
             this.fuelBox.TabIndex = 1;
@@ -64,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 37);
+            this.label2.Location = new System.Drawing.Point(12, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 2;
@@ -77,7 +80,7 @@
             "Фиксированный объем",
             "Фиксированная цена",
             "До полного бака с ограничением по объему"});
-            this.modeBox.Location = new System.Drawing.Point(106, 34);
+            this.modeBox.Location = new System.Drawing.Point(106, 63);
             this.modeBox.Name = "modeBox";
             this.modeBox.Size = new System.Drawing.Size(257, 21);
             this.modeBox.TabIndex = 3;
@@ -86,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 62);
+            this.label3.Location = new System.Drawing.Point(13, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 4;
@@ -96,8 +99,9 @@
             // 
             this.buyBox.FormattingEnabled = true;
             this.buyBox.Items.AddRange(new object[] {
-            "Банковской картой"});
-            this.buyBox.Location = new System.Drawing.Point(106, 59);
+            "Банковской картой",
+            "Накопительной картой"});
+            this.buyBox.Location = new System.Drawing.Point(106, 88);
             this.buyBox.Name = "buyBox";
             this.buyBox.Size = new System.Drawing.Size(257, 21);
             this.buyBox.TabIndex = 5;
@@ -105,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 97);
+            this.label4.Location = new System.Drawing.Point(87, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 6;
@@ -114,7 +118,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(97, 122);
+            this.label5.Location = new System.Drawing.Point(97, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 7;
@@ -122,7 +126,7 @@
             // 
             // vBox
             // 
-            this.vBox.Location = new System.Drawing.Point(138, 94);
+            this.vBox.Location = new System.Drawing.Point(138, 123);
             this.vBox.Name = "vBox";
             this.vBox.Size = new System.Drawing.Size(42, 20);
             this.vBox.TabIndex = 8;
@@ -131,7 +135,7 @@
             // 
             // priceBox
             // 
-            this.priceBox.Location = new System.Drawing.Point(139, 119);
+            this.priceBox.Location = new System.Drawing.Point(139, 148);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(70, 20);
             this.priceBox.TabIndex = 9;
@@ -141,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(186, 97);
+            this.label6.Location = new System.Drawing.Point(186, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 10;
@@ -150,7 +154,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(215, 122);
+            this.label7.Location = new System.Drawing.Point(215, 151);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 11;
@@ -158,7 +162,7 @@
             // 
             // proceedButton
             // 
-            this.proceedButton.Location = new System.Drawing.Point(138, 145);
+            this.proceedButton.Location = new System.Drawing.Point(138, 174);
             this.proceedButton.Name = "proceedButton";
             this.proceedButton.Size = new System.Drawing.Size(103, 23);
             this.proceedButton.TabIndex = 12;
@@ -166,11 +170,40 @@
             this.proceedButton.UseVisualStyleBackColor = true;
             this.proceedButton.Click += new System.EventHandler(this.proceedButton_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(54, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Клиент:";
+            // 
+            // clientBox
+            // 
+            this.clientBox.FormattingEnabled = true;
+            this.clientBox.Location = new System.Drawing.Point(106, 6);
+            this.clientBox.Name = "clientBox";
+            this.clientBox.Size = new System.Drawing.Size(257, 21);
+            this.clientBox.TabIndex = 14;
+            // 
+            // proceedLabel
+            // 
+            this.proceedLabel.AutoSize = true;
+            this.proceedLabel.Location = new System.Drawing.Point(135, 200);
+            this.proceedLabel.Name = "proceedLabel";
+            this.proceedLabel.Size = new System.Drawing.Size(114, 13);
+            this.proceedLabel.TabIndex = 15;
+            this.proceedLabel.Text = "Происходит оплата...";
+            // 
             // AZSView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 172);
+            this.ClientSize = new System.Drawing.Size(375, 214);
+            this.Controls.Add(this.proceedLabel);
+            this.Controls.Add(this.clientBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.proceedButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -207,5 +240,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button proceedButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox clientBox;
+        private System.Windows.Forms.Label proceedLabel;
     }
 }

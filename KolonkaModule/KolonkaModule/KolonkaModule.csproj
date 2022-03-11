@@ -49,12 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\BankController.cs" />
+    <Compile Include="controller\ClientController.cs" />
     <Compile Include="controller\GeneralController.cs" />
     <Compile Include="controller\NetworkController.cs" />
     <Compile Include="controller\StationController.cs" />
+    <Compile Include="model\ClientData.cs" />
+    <Compile Include="model\requests\PostRequestAddStoryStation.cs" />
+    <Compile Include="model\requests\PostRequestBonusClient.cs" />
+    <Compile Include="model\requests\PostRequestPayBank.cs" />
+    <Compile Include="model\requests\PostRequestRefundBank.cs" />
     <Compile Include="model\StationData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\AlternativePaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\AlternativePaymentView.Designer.cs">
+      <DependentUpon>AlternativePaymentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\AZSView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +80,12 @@
     <Compile Include="view\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\PistolView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\PistolView.Designer.cs">
+      <DependentUpon>PistolView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,11 +95,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\AlternativePaymentView.resx">
+      <DependentUpon>AlternativePaymentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\AZSView.resx">
       <DependentUpon>AZSView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\PistolView.resx">
+      <DependentUpon>PistolView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

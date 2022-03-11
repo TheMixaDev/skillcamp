@@ -28,7 +28,11 @@ namespace AZSWebApi.Models
         public virtual DbSet<Card> Cards { get; set; }
         public virtual DbSet<CardType> CardTypes { get; set; }
         public virtual DbSet<GasStation> GasStations { get; set; }
+        public virtual DbSet<GasStationLog> GasStationLogs { get; set; }
         public virtual DbSet<LoyalityCard> LoyalityCards { get; set; }
+        public virtual DbSet<Pay> Pays { get; set; }
+        public virtual DbSet<Purchase> Purchases { get; set; }
+        public virtual DbSet<Refund> Refunds { get; set; }
         public virtual DbSet<StationFuel> StationFuels { get; set; }
     }
 }

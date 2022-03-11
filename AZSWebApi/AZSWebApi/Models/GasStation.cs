@@ -17,12 +17,18 @@ namespace AZSWebApi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GasStation()
         {
+            this.GasStationLogs = new HashSet<GasStationLog>();
+            this.Purchases = new HashSet<Purchase>();
             this.StationFuels = new HashSet<StationFuel>();
         }
     
         public int Id { get; set; }
         public string Address { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GasStationLog> GasStationLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Purchase> Purchases { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StationFuel> StationFuels { get; set; }
     }
