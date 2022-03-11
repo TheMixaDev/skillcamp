@@ -1,0 +1,14 @@
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\bin\Debug\AZSModule.exe.config
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\bin\Debug\AZSModule.exe
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\bin\Debug\AZSModule.pdb
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.csprojAssemblyReference.cache
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.Properties.Resources.resources
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.view.AZSView.resources
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.view.MainView.resources
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.csproj.GenerateResource.cache
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.csproj.CoreCompileInputs.cache
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.csproj.CopyComplete
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.exe
+C:\Users\MixaDev\source\repos\AZSModule\AZSModule\obj\Debug\AZSModule.pdb

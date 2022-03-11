@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AZSModelContainer" CdmEntityContainer="AZSEntities">
+    <EntitySetMapping Name="Cards">
+      <EntityTypeMapping TypeName="AZSModel.Card">
+        <MappingFragment StoreEntitySet="Card">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardTypeId" ColumnName="CardTypeId" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="CardExpDate" ColumnName="CardExpDate" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="CardHolderId" ColumnName="CardHolderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardTypes">
+      <EntityTypeMapping TypeName="AZSModel.CardType">
+        <MappingFragment StoreEntitySet="CardType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GasStations">
+      <EntityTypeMapping TypeName="AZSModel.GasStation">
+        <MappingFragment StoreEntitySet="GasStation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoyalityCards">
+      <EntityTypeMapping TypeName="AZSModel.LoyalityCard">
+        <MappingFragment StoreEntitySet="LoyalityCards">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StationFuels">
+      <EntityTypeMapping TypeName="AZSModel.StationFuel">
+        <MappingFragment StoreEntitySet="StationFuel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GasStationId" ColumnName="GasStationId" />
+          <ScalarProperty Name="FuelTypeId" ColumnName="FuelTypeId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="AmountOfFuel" ColumnName="AmountOfFuel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

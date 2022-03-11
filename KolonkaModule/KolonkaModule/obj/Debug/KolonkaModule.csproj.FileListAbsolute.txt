@@ -1,0 +1,14 @@
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.csprojAssemblyReference.cache
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.Properties.Resources.resources
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.view.AZSView.resources
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.view.MainView.resources
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.csproj.GenerateResource.cache
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.csproj.CoreCompileInputs.cache
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\bin\Debug\KolonkaModule.exe.config
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\bin\Debug\KolonkaModule.exe
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\bin\Debug\KolonkaModule.pdb
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.csproj.CopyComplete
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.exe
+C:\Users\MixaDev\source\repos\KolonkaModule\KolonkaModule\obj\Debug\KolonkaModule.pdb

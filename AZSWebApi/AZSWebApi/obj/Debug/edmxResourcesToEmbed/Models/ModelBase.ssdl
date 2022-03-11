@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище AZSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CardTypeId" Type="int" Nullable="false" />
+    <Property Name="CardNumber" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="CardExpDate" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Balance" Type="int" Nullable="false" />
+    <Property Name="CardHolderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CardType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GasStation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoyalityCards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CardHolder" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Balance" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StationFuel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GasStationId" Type="int" Nullable="false" />
+    <Property Name="FuelTypeId" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="AmountOfFuel" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Card_CardType">
+    <End Role="CardType" Type="Self.CardType" Multiplicity="1" />
+    <End Role="Card" Type="Self.Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CardType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="CardTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Card_LoyalityCards">
+    <End Role="LoyalityCards" Type="Self.LoyalityCards" Multiplicity="1" />
+    <End Role="Card" Type="Self.Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoyalityCards">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="CardHolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StationFuel_GasStation">
+    <End Role="GasStation" Type="Self.GasStation" Multiplicity="1" />
+    <End Role="StationFuel" Type="Self.StationFuel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GasStation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StationFuel">
+        <PropertyRef Name="GasStationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище AZSModelContainer">
+    <EntitySet Name="Card" EntityType="Self.Card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardType" EntityType="Self.CardType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GasStation" EntityType="Self.GasStation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoyalityCards" EntityType="Self.LoyalityCards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StationFuel" EntityType="Self.StationFuel" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Card_CardType" Association="Self.FK_Card_CardType">
+      <End Role="CardType" EntitySet="CardType" />
+      <End Role="Card" EntitySet="Card" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Card_LoyalityCards" Association="Self.FK_Card_LoyalityCards">
+      <End Role="LoyalityCards" EntitySet="LoyalityCards" />
+      <End Role="Card" EntitySet="Card" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StationFuel_GasStation" Association="Self.FK_StationFuel_GasStation">
+      <End Role="GasStation" EntitySet="GasStation" />
+      <End Role="StationFuel" EntitySet="StationFuel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
